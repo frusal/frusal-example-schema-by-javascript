@@ -1,5 +1,7 @@
 # Example of creating frusal.com schema by a script
 
+**[TL;CR](./deploy-my-schema.mjs)**
+
 An example JavaScript to create workspace schema and data at [frusal.com]. Workspace schema consists of classes, fields and other metadata. Script is to be executed on client side under [Node.js].
 
 This example creates a model for a basic shop or manufacturing support system. It is Order centric. It demonstrates an abstract class, inheritance, regular and inverse references, collection and primitive type fields.
