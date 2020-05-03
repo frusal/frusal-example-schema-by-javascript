@@ -14,7 +14,7 @@ This example creates a model for basic shop or manufacturing support system. It 
 
 ## Usage
 
-Providing that you have [Node.js] installed, you need to login to the workspace with frusal [CLI]:
+Providing that you have [Node.js] installed, you need to login to the workspace with [frusal CLI]:
 
 ```text
 npx frusal login
@@ -37,7 +37,7 @@ CONNECTED to workspace 'Unit Test' (ws_001_unit_test) as 'unit.test@fruit-salad.
 and then run the [script](./deploy-my-schema.mjs):
 
 ```text
-node ./deploy-my-schema.mjs
+node --experimental-json-modules ./deploy-my-schema.mjs
 ```
 
 <details><summary>See the console output</summary>
@@ -62,11 +62,11 @@ The other files in this repository are much less interesting. Fell free to copy 
 
 ## Next
 
-More information: [CLI], [Angular Tutorial], [React Tutorial], [Node.js Tutorial] and [frusal.com].
+More information: [Frusal CLI], [Angular Tutorial], [React Tutorial], [Node.js Tutorial] and [frusal.com].
 
 [frusal.com]: https://frusal.com
 [Node.js]: https://nodejs.org
-[CLI]: https://github.com/frusal/frusal-cli#readme
+[Frusal CLI]: https://github.com/frusal/frusal-cli#readme
 [Angular Tutorial]: https://github.com/frusal/frusal-tutorial-angular
 [React Tutorial]: https://github.com/frusal/frusal-tutorial-react
 [Node.js Tutorial]: https://github.com/frusal/frusal-tutorial-node

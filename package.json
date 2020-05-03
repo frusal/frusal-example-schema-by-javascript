@@ -1,10 +1,11 @@
 {
   "name": "frusal-example-schema-by-javascript",
   "version": "1.0.0",
-  "description": "An example script to create workspace schema and data at frusal.com. Schema consists of classes, filds and other metadata.",
+  "description": "An example script to create workspace schema and data at frusal.com. Schema consists of classes, fields and other metadata.",
   "private": true,
   "scripts": {
-    "run": "node index.js"
+    "init": "npm install",
+    "deploy": "node --experimental-json-modules ./deploy-my-schema.mjs"
   },
   "devDependencies": {
     "frusal": "x.x.x"
