@@ -8,11 +8,13 @@ An example JavaScript to create workspace schema and data at [frusal.com]. Works
 
 This example creates a model for basic shop or manufacturing support system. It is Order centric. It demonstrates an abstract class, inheritance, regular and inverse references, collection and primitive type fields.
 
-## The UML diagram of the schema
+## Schema
+
+The UML diagram of the schema
 
 ![UML Diagram](./uml-diagram.svg)
 
-*[edit](https://app.diagrams.net/?mode=github#Hfrusal%2Ffrusal-example-schema-by-javascript%2Fmaster%2Fuml-diagram.svg) at diagrams.net*
+<small>*[edit](https://app.diagrams.net/?mode=github#Hfrusal%2Ffrusal-example-schema-by-javascript%2Fmaster%2Fuml-diagram.svg) at diagrams.net*</small>
 
 ## Usage
 
@@ -64,7 +66,7 @@ The other files in this repository are much less interesting. Fell free to copy 
 
 ## Next
 
-More information: [Frusal CLI], [Angular Tutorial], [React Tutorial], [Node.js Tutorial] and [frusal.com].
+Find more information at [Frusal CLI], [Angular Tutorial], [React Tutorial], [Node.js Tutorial] and [frusal.com].
 
 [frusal.com]: https://frusal.com
 [Node.js]: https://nodejs.org
