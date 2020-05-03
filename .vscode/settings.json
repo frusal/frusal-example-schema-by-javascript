@@ -1,6 +1,14 @@
 {
     "window.title": "🕸${rootName}${separator}${activeEditorShort}",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "cSpell.language": "en-GB",
     "cSpell.words": [
+        "Spec",
         "screenshoot"
     ]
 }
