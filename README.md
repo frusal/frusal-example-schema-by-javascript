@@ -52,11 +52,11 @@ Schema changes deployed.
 
 Check with [frusal.com] web UI that the classes are correctly created:
 
-<img src="./classes-screenshot.png" width="500">
+<img src="./classes-screenshot.png" width="600">
 
 ## Understanding
 
-The code to create the schema is **[here](./deploy-my-schema.mjs)**.
+The code to create the schema is in **[deploy-my-schema.mjs](./deploy-my-schema.mjs)**.
 
 The other files in this repository are much less interesting. Fell free to copy this file into your project and use it as a starting point for the script which controls your schema. Unless you prefer to configure your schema through web IU, which is more common at early stage or for the smaller projects.
 
