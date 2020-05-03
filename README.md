@@ -1,6 +1,8 @@
 # Example of creating frusal.com schema by a script
 
-**[TL;CR](./deploy-my-schema.mjs)**
+🚧 *The project is in development and is not available for general public yet.*
+
+**[TL;DR](./deploy-my-schema.mjs)**
 
 An example JavaScript to create workspace schema and data at [frusal.com]. Workspace schema consists of classes, fields and other metadata. Script is to be executed on client side under [Node.js].
 
