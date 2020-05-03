@@ -67,6 +67,6 @@ More information: [Frusal CLI], [Angular Tutorial], [React Tutorial], [Node.js T
 [frusal.com]: https://frusal.com
 [Node.js]: https://nodejs.org
 [Frusal CLI]: https://github.com/frusal/frusal-cli#readme
-[Angular Tutorial]: https://github.com/frusal/frusal-tutorial-angular
-[React Tutorial]: https://github.com/frusal/frusal-tutorial-react
-[Node.js Tutorial]: https://github.com/frusal/frusal-tutorial-node
+[Angular Tutorial]: https://github.com/frusal/frusal-tutorial-angular#readme
+[React Tutorial]: https://github.com/frusal/frusal-tutorial-react#readme
+[Node.js Tutorial]: https://github.com/frusal/frusal-tutorial-node#readme
