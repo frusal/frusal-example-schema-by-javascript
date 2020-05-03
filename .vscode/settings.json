@@ -1,4 +1,5 @@
 {
+    "window.title": "🕸${rootName}${separator}${activeEditorShort}",
     "cSpell.words": [
         "screenshoot"
     ]
