@@ -14,7 +14,7 @@ This example creates a model for basic shop or manufacturing support system. It 
 
 ## Usage
 
-Providing that you have [Node.js] installed, you need to login to the workspace:
+Providing that you have [Node.js] installed, you need to login to the workspace with frusal [CLI]:
 
 ```text
 npx frusal login
@@ -54,13 +54,19 @@ Check with [frusal.com] web UI that the classes are correctly created:
 
 <img src="./classes-screenshot.png" width="600">
 
-## Understanding
+## Essence
 
 The code to create the schema is in **[deploy-my-schema.mjs](./deploy-my-schema.mjs)**.
 
-The other files in this repository are much less interesting. Fell free to copy this file into your project and use it as a starting point for the script which controls your schema. Unless you prefer to configure your schema through web IU, which is more common at early stage or for the smaller projects.
+The other files in this repository are much less interesting. Fell free to copy this file into your project and use it as a starting point for the script which controls your schema. Unless you prefer to configure your schema through web UI, which is more common at early stage or for the smaller projects.
 
+## Next
 
+More information: [CLI], [Angular Tutorial], [React Tutorial], [Node.js Tutorial] and [frusal.com].
 
 [frusal.com]: https://frusal.com
 [Node.js]: https://nodejs.org
+[CLI]: https://github.com/frusal/frusal-cli#readme
+[Angular Tutorial]: https://github.com/frusal/frusal-tutorial-angular
+[React Tutorial]: https://github.com/frusal/frusal-tutorial-react
+[Node.js Tutorial]: https://github.com/frusal/frusal-tutorial-node
