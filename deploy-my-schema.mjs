@@ -1,4 +1,4 @@
-#!/usr/bin/env node --experimental-json-modules
+#!/usr/bin/env node
 // @ts-check
 
 import { ActualWorkspace, ClassSpec, CollectionType, Flow, IntegerType, Inverse, InverseSide, ObjectUtilsPublic, Property, ReferenceType, session, StringType, Transaction } from 'frusal';
