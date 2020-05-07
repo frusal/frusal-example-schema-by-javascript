@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // @ts-check
 
-import { ActualWorkspace, ClassSpec, CollectionType, Flow, IntegerType, Inverse, InverseSide, ObjectUtilsPublic, Property, ReferenceType, session, StringType, Transaction } from 'frusal';
+import { ActualWorkspace, ClassSpec, CollectionType, Flow, IntegerType, Inverse, InverseSide, Property, ReferenceType, session, StringType, Transaction } from 'frusal';
 import fs from 'fs';
 
 const COMMON_DESCRIPTION = 'Created and maintained by deploy-my-schema.js';
@@ -59,8 +59,10 @@ function createSchema(tx) {
     Flow.checkThat(module != null);
     const stringType = tx.createEntity(StringType);
     stringType.description = COMMON_DESCRIPTION;
+    stringType.module = module;
     const numericType = tx.createEntity(IntegerType);
     numericType.description = COMMON_DESCRIPTION;
+    numericType.module = module;
 
     // Create classes upfront to address a problem of circular reference which prevents sequential creation.
     const namedEntityClass = tx.createEntity(ClassSpec);
@@ -160,7 +162,6 @@ function createSchema(tx) {
 function createData(tx) {
     ['Pineapple', 'Rockmelon', 'Watermelon', 'Strawberries', 'Green grapes', 'Red grapes', 'Passionfruit', 'Lime juice'].forEach(name => {
         const product = tx.createEntity("Product"); // Referencing class by name string, therefore no type checking for the instance reference.
-        ObjectUtilsPublic.debugInspectConsole(product);
         product.name = name;
     });
 }
