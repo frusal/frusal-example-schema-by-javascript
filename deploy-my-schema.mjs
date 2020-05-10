@@ -22,13 +22,13 @@ async function main() {
                 console.warn('Please use `npx frusal login` to select a workspace.');
 
             } else {
-                await session.workspace.withTempStageAsyncExpression(stage => {
+                await session.workspace.withTempStageAsyncExpression(async stage => {
                     const actualWorkspace = stage.transact(tx => tx.getSingletonInstance(ActualWorkspace));
                     const module = actualWorkspace.modules.find(m => !m.system);
                     console.log(`Creating classes at module "${module.name}"...`);
 
                     // Schema
-                    stage.transact(tx => {
+                    await stage.transact(async tx => {
                         // Delete old classes and types
                         [...module.classes, ...module.types].filter(c => c.description === COMMON_DESCRIPTION).forEach(c => c.delete());
 
@@ -37,7 +37,7 @@ async function main() {
                     });
 
                     // Data
-                    stage.transact(tx => {
+                    await stage.transact(async tx => {
                         createData(tx);
                     });
 
@@ -46,8 +46,10 @@ async function main() {
             }
         }
     } finally {
-        session.close();
+        console.warn('Closing session.');
+        await session.close();
     }
+    console.warn('Buy.');
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -167,5 +169,4 @@ function createData(tx) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 main();
