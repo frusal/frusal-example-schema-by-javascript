@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --unhandled-rejections=strict
 // @ts-check
 
 import { ActualWorkspace, ClassSpec, CollectionType, Flow, IntegerType, Inverse, InverseSide, Property, ReferenceType, session, StringType, Transaction } from 'frusal';
@@ -59,6 +59,7 @@ function createSchema(tx) {
     const actualWorkspace = tx.getSingletonInstance(ActualWorkspace);
     const module = actualWorkspace.modules.find(m => !m.system);
     Flow.checkThat(module != null);
+
     const stringType = tx.createEntity(StringType);
     stringType.description = COMMON_DESCRIPTION;
     stringType.module = module;
@@ -92,6 +93,7 @@ function createSchema(tx) {
         productClass.name = 'Product';
         productClass.description = COMMON_DESCRIPTION;
         productClass.ancestor = namedEntityClass;
+        productClass.store = module.defaultLookupStore;
 
         const productPriceProp = tx.createEntity(Property);
         productPriceProp.name = 'Price';
@@ -169,4 +171,5 @@ function createData(tx) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 main();
