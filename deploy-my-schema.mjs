@@ -61,13 +61,15 @@ function createSchema(tx) {
     Flow.checkThat(module != null);
 
     const stringType = tx.createEntity(StringType);
+    stringType.name = 'String';
     stringType.description = COMMON_DESCRIPTION;
     stringType.module = module;
     const numericType = tx.createEntity(IntegerType);
+    numericType.name = 'Numeric';
     numericType.description = COMMON_DESCRIPTION;
     numericType.module = module;
 
-    // Create classes upfront to address a problem of circular reference which prevents sequential creation.
+    // Create classes upfront to address a problem of circular reference which makes sequential creation impossible.
     const namedEntityClass = tx.createEntity(ClassSpec);
     const productClass = tx.createEntity(ClassSpec);
     const orderClass = tx.createEntity(ClassSpec);
@@ -111,7 +113,7 @@ function createSchema(tx) {
 
         const orderOrderLineProp = tx.createEntity(Property);
         orderOrderLineProp.name = 'Order Lines';
-        orderOrderLineProp.description = 'Collection of order lines, which links the products and quantities to this order.';
+        orderOrderLineProp.description = 'The Collection of order lines, which links the products and quantities to this order.';
         orderOrderLineProp.inverse = orderToOrderLineInverse; // inverse references automatically update the other end.
         orderOrderLineProp.inverseSide = tx.createEntity(InverseSide);
         const orderOrderLineType = tx.createEntity(CollectionType);
@@ -121,7 +123,7 @@ function createSchema(tx) {
 
         const orderDeliveryAddressProp = tx.createEntity(Property);
         orderDeliveryAddressProp.name = 'Delivery Address';
-        orderDeliveryAddressProp.description = 'Delivery address for the order.';
+        orderDeliveryAddressProp.description = 'The Delivery address for the order.';
         orderDeliveryAddressProp.type = stringType;
         orderDeliveryAddressProp.classSpec = orderClass;
         orderClass.module = module; // an inverse to module.classes collection.
@@ -135,7 +137,7 @@ function createSchema(tx) {
 
         const orderLineOrderProp = tx.createEntity(Property);
         orderLineOrderProp.name = 'Order';
-        orderLineOrderProp.description = 'Order this line belongs to.';
+        orderLineOrderProp.description = 'The Order this line belongs to.';
         orderLineOrderProp.inverse = orderToOrderLineInverse;
         orderLineOrderProp.inverseSide = tx.createEntity(InverseSide);
         const orderLineOrderType = tx.createEntity(ReferenceType);
@@ -145,7 +147,7 @@ function createSchema(tx) {
 
         const orderLineProductProp = tx.createEntity(Property);
         orderLineProductProp.name = 'Product';
-        orderLineProductProp.description = 'Product this line orders with quantity.';
+        orderLineProductProp.description = 'The Product this line orders with quantity.';
         const orderLineProductType = tx.createEntity(ReferenceType);
         orderLineProductType.elementClass = productClass;
         orderLineProductProp.type = orderLineProductType;
@@ -153,7 +155,7 @@ function createSchema(tx) {
 
         const orderLineQuantityProp = tx.createEntity(Property);
         orderLineQuantityProp.name = 'Quantity';
-        orderLineQuantityProp.description = 'Quantity of product to be delivered.';
+        orderLineQuantityProp.description = 'The Quantity of product to be delivered.';
         orderLineQuantityProp.type = numericType;
         orderLineQuantityProp.classSpec = orderLineClass;
         orderLineClass.module = module; // an inverse to module.classes collection.
